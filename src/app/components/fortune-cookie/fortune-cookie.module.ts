@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FortuneComponent } from './fortune/fortune.component';
 import { FortuneModule } from './fortune/fortune.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,12 +17,13 @@ import { CookieComponent } from './cookie/cookie.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FortuneModule
+    FortuneModule,
+    RouterModule
   ],
   providers: [],
   exports:[
-    FortuneComponent
-    
+    FortuneComponent,
+    CookieComponent
   ]
   // bootstrap: [AppComponent]
 })

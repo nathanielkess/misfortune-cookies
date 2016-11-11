@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { FortuneModule } from './../../fortune-cookie/fortune/fortune.module';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -16,7 +17,8 @@ describe('FortuneComponent', () => {
         FortuneComponent 
       ],
       imports:[
-        FortuneModule
+        FortuneModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();

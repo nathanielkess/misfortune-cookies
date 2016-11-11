@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { FortuneCookieModule } from './components/fortune-cookie/fortune-cookie.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    FortuneCookieModule
+    FortuneCookieModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
