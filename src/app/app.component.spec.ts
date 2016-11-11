@@ -1,3 +1,5 @@
+import { FortuneModule } from './components/fortune-cookie/fortune/fortune.module';
+import { FortuneCookieModule } from './components/fortune-cookie/fortune-cookie.module';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
@@ -9,6 +11,10 @@ describe('App: MisfortuneCookies', () => {
       declarations: [
         AppComponent
       ],
+      imports:[
+        FortuneCookieModule,
+        FortuneModule
+      ]
     });
   });
 
