@@ -1,3 +1,4 @@
+import { FortuneService } from './fortune.service';
 import { fortunesReducer } from './store/reducers/fortune.reducer';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
@@ -24,7 +25,7 @@ import { CookieComponent } from './cookie/cookie.component';
     StoreModule.provideStore(fortunesReducer)
   ],
   providers: [
-    
+    FortuneService,
   ],
   exports:[
     FortuneComponent,

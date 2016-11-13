@@ -17,7 +17,7 @@ export class FortuneService {
 
   fortunes: Observable<Array<Fortune>>
 
-  constructor(private store: Store<FortuneStore>) {
+  constructor(private store: Store<FortuneStore>) { 
     this.fortunes = store.select('fortunes');
   }
 
