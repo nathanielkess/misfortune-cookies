@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { AddFortuneComponent } from './add-fortune/add-fortune.component';
 import { EditFortuneComponent } from './edit-fortune/edit-fortune.component';
 import { ListFortunesComponent } from './list-fortunes/list-fortunes.component';
+import { ViewFortuneDetailsComponent } from './view-fortune-details/view-fortune-details.component';
+import { ViewManageFortunesComponent } from './view-manage-fortunes/view-manage-fortunes.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { ListFortunesComponent } from './list-fortunes/list-fortunes.component';
     AddFortuneComponent,
     EditFortuneComponent,
     ListFortunesComponent,
+    ViewFortuneDetailsComponent,
+    ViewManageFortunesComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,4 +34,4 @@ import { ListFortunesComponent } from './list-fortunes/list-fortunes.component';
   ]
   // bootstrap: [AppComponent]
 })
-export class FortuneModule { }
+export class FortuneManagerModule { }

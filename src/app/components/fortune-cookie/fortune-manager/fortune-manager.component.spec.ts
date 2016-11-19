@@ -1,23 +1,23 @@
+import { FortuneManagerModule } from './fortune-manager.module';
+import { FortuneManagerComponent } from './fortune-manager.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FortuneModule } from './../../fortune-cookie/fortune/fortune.module';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { FortuneComponent } from './fortune.component';
 
 describe('FortuneComponent', () => {
-  let component: FortuneComponent;
-  let fixture: ComponentFixture<FortuneComponent>;
+  let component: FortuneManagerComponent;
+  let fixture: ComponentFixture<FortuneManagerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
-        FortuneComponent 
+        FortuneManagerComponent 
       ],
       imports:[
-        FortuneModule,
+        FortuneManagerModule,
         RouterTestingModule
       ]
     })
@@ -25,7 +25,7 @@ describe('FortuneComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FortuneComponent);
+    fixture = TestBed.createComponent(FortuneManagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

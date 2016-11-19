@@ -5,14 +5,16 @@ import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fortune',
+  selector: 'fortune-manager',
   template: `
     <h2>Fortune Component</h2>
     <router-outlet></router-outlet>
   `,
-  styleUrls: ['./fortune.component.css']
+  styles: [`
+    
+  `]
 })
-export class FortuneComponent implements OnInit {
+export class FortuneManagerComponent implements OnInit {
 
   fortunes: Observable<Array<Fortune>>;
   
