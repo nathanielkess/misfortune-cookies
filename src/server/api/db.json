@@ -1,16 +1,16 @@
 {
-  "heroes": [
+  "fortunes": [
     {
       "id": 1,
-      "name": "Magneto"
+      "text": "Today will be a good day."
     },
     {
       "id": 2,
-      "name": "Doctor Strange"
+      "name": "Don't go outside today."
     },
     {
       "id": 3,
-      "name": "Batman"
+      "name": "Stay in bed."
     }
   ]
 }

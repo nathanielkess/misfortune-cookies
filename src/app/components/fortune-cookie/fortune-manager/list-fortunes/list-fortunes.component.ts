@@ -1,4 +1,4 @@
-import { Fortune } from './../../fortune.service';
+//import { Fortune } from './../../fortune.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -17,7 +17,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListFortunesComponent implements OnInit {
 
-  @Input() fortunes: Fortune[];
+  //@Input() fortunes: Fortune[];
 
   constructor() { }
 

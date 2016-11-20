@@ -1,6 +1,6 @@
 import { FortuneStore } from './../fortune.service.spec';
 import { Store } from '@ngrx/store';
-import { Fortune, FortuneService } from './../fortune.service';
+import { FortuneService } from './../fortune.service';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,13 +16,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FortuneManagerComponent implements OnInit {
 
-  fortunes: Observable<Array<Fortune>>;
+  //fortunes: Observable<Array<Fortune>>;
   
-  constructor(private fortuneService:FortuneService, private store: Store<FortuneStore>) { }
-
+  //constructor(private fortuneService:FortuneService, private store: Store<FortuneStore>) { }
+  constructor() {}
+  
   ngOnInit() {
-    this.fortunes = this.fortuneService.fortunes;
-    this.fortuneService.loadFortunes();
+    // this.fortunes = this.fortuneService.fortunes;
+    // this.fortuneService.loadFortunes();
   }
 
 }
