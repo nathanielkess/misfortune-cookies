@@ -13,9 +13,6 @@ export class FortuneService {
   constructor(private http:Http){}
 
   getFortunes():Observable<Fortune[]> {
-
-    console.log('fortuneService.getFortunes() called');
-
     return this.http.get('/api/fortunes')
       .map(res => res.json());
   }

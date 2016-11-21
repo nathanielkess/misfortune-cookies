@@ -2,7 +2,7 @@
   "fortunes": [
     {
       "id": 1,
-      "text": "Today will be a good day."
+      "text": "You will encounter a spider soon."
     },
     {
       "id": 2,
@@ -10,7 +10,7 @@
     },
     {
       "id": 3,
-      "name": "Stay in bed."
+      "name": "You will get an annoying song stuck in your head."
     }
   ]
 }

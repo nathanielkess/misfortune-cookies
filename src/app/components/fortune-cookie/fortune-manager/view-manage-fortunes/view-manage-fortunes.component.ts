@@ -19,15 +19,19 @@ export class ViewManageFortunesComponent implements OnInit {
   fortunes: Observable<any>;
 
   constructor(
-    private store: Store<AppState>,
+    private store: Store<any>,
     private fortuneActions: FortuneActions,    
   ) {
 
-    this.fortunes = this.store.select('fortunes');
 
    }
 
   ngOnInit() {
+    
+    
+    this.store.dispatch(this.fortuneActions.loadFortunes());
+    
+    this.fortunes = this.store.select('fortunes');
 
     this.fortunes.subscribe(val => {
       console.log(val)

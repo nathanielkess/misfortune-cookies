@@ -21,4 +21,5 @@ export class FortuneEffects {
     .map(fortunes => this.fortuneActions.loadFortunesSuccess(fortunes));
 
 
+
 }
