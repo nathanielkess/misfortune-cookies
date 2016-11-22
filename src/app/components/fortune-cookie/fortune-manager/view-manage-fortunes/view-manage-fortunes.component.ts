@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'view-manage-fortunes',
   template: `
-    <p>view manage fortunes works!</p>
+    <list-fortunes [fortunes]="fortunes | async"></list-fortunes>
 
   `,
   styles: [``]

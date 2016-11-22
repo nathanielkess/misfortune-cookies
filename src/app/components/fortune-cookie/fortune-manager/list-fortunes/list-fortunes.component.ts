@@ -2,22 +2,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-list-fortunes',
+  selector: 'list-fortunes',
   template: `
   
     <ul>
-      <li>Fortunes list starts here:</li>
       <li *ngFor="let fortune of fortunes">
-        {{ fortune.text }}      
+        <a [routerLink]="['/fortunes/details', fortune.id ]">{{ fortune.text }}</a>
       </li>
     </ul>
   
   `,
-  styleUrls: ['./list-fortunes.component.css']
+  styles: [`
+  `]
 })
 export class ListFortunesComponent implements OnInit {
 
-  //@Input() fortunes: Fortune[];
+  @Input() fortunes;
 
   constructor() { }
 

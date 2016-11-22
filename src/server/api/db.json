@@ -6,11 +6,11 @@
     },
     {
       "id": 2,
-      "name": "Don't go outside today."
+      "text": "Don't go outside today."
     },
     {
       "id": 3,
-      "name": "You will get an annoying song stuck in your head."
+      "text": "You will get an annoying song stuck in your head."
     }
   ]
 }

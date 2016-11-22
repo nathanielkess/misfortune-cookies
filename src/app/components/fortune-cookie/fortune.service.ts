@@ -17,6 +17,14 @@ export class FortuneService {
       .map(res => res.json());
   }
 
+  getFortune(id):Observable<Fortune> {
+    return this.http.get('/api/fortunes/' + id)
+      .map(res => {
+        console.log(res);
+        return res.json();
+      });
+  }
+
   // private generateUUID(): string {
   //   return ('' + 1e7 + -1e3 + -4e3 + -8e3 + -1e11)
   //     .replace(/1|0/g, function() {

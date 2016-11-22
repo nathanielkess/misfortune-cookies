@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-edit-fortune',
-  templateUrl: './edit-fortune.component.html',
-  styleUrls: ['./edit-fortune.component.css']
+  selector: 'edit-fortune',
+  template: `
+    {{ fortune.text }}
+  `,
+  styles: [``]
 })
 export class EditFortuneComponent implements OnInit {
 
+  @Input() fortune;
   constructor() { }
 
   ngOnInit() {

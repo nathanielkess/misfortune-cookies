@@ -1,11 +1,13 @@
 import { FortuneListState, fortuneListReducer } from './fortune-list.reducer';
+import { FortuneState, fortuneReducer } from './fortune.reducer';
 import '@ngrx/core/add/operator/select';
-import {compose} from '@ngrx/core/compose';
 import {combineReducers} from '@ngrx/store';
+import {compose} from '@ngrx/core/compose';
 
 
 export interface AppState {
-  fortunes: FortuneListState
+  fortunes: FortuneListState,
+  fortune: FortuneState
 }
 
 // export default compose(combineReducers)({
@@ -13,5 +15,6 @@ export interface AppState {
 // });
 
 export const allReducers = combineReducers({
-  fortunes:fortuneListReducer
+  fortune:fortuneReducer,
+  fortunes:fortuneListReducer,
 });
