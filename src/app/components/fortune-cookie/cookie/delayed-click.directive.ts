@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer } from '@angular/core';
 
 @Directive({
   selector: '[dalayedClick]'
@@ -10,13 +10,22 @@ export class DelayedClickDirective {
 
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight();
+    this.warmingUp();
   }
   @HostListener('mouseleave') onMouseLeave() {
     //this.highlight(null);
+    this.clear();
   }
 
-  private highlight() {
+
+
+
+  private warmingUp() {
     this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
+    this.renderer.setElementClass(this.el.nativeElement, 'warmUp', true)
+  }
+
+  private clear(){
+
   }
 }
