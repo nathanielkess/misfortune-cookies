@@ -9,7 +9,7 @@ import {Subscription} from 'rxjs/Subscription';
 @Component({
   selector: 'view-fortune-details',
   template: `
-    <edit-fortune [fortune]="fortune | async"></edit-fortune>
+    <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>
   `,
   styles: [``]
 })
@@ -28,13 +28,16 @@ export class ViewFortuneDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.idSub = this.route.params.select<string>('id')
-
       .subscribe(id => {
           this.store.dispatch(this.fortuneActions.getFortune(id))
-      });
+    });
+  }
 
+  save(fortune){
+    console.log('saving: ', fortune);
+
+    this.store.dispatch(this.fortuneActions.saveFortune(fortune));
 
   }
 

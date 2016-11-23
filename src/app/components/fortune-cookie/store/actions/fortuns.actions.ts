@@ -21,7 +21,7 @@ export class FortuneActions{
     }
   }
 
-  static GET_FORTUNE = '[Fortune] Get Fortune'
+  static GET_FORTUNE = '[Fortune] Get Fortune';
   getFortune(id):Action {
     return {
       type: FortuneActions.GET_FORTUNE,
@@ -29,10 +29,26 @@ export class FortuneActions{
     }
   }
 
-  static GET_FORTUNE_SUCCESS = '[Fortune] Get Fortune Success'
+  static GET_FORTUNE_SUCCESS = '[Fortune] Get Fortune Success';
   getFortuneSuccess(fortune):Action {
     return {
       type: FortuneActions.GET_FORTUNE_SUCCESS,
+      payload: fortune
+    }
+  }
+
+  static SAVE_FORTUNE = '[Fortune] Save Fortune';
+  saveFortune(fortune):Action {
+    return {
+      type: FortuneActions.SAVE_FORTUNE,
+      payload: fortune
+    }
+  }
+
+  static SAVE_FORTUNE_SUCCESS = '[Fortune] Save Fortune Success';
+  saveFortuneSuccess(fortune) {
+    return {
+      type: FortuneActions.SAVE_FORTUNE_SUCCESS,
       payload: fortune
     }
   }

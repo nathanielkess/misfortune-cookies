@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Base
+*************************************/
+html { height:100%; }
+body { height:100%; font-family:Arial, Helvetica, sans-serif; }
+img { max-width:100%}
+
+/*Layout
+*************************************/
+
+/*Module
+*************************************/
+
+.fortuneCookie { width:350px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
+
+.fortuneViewer { background-color:#d25f2c; position:fixed; top:0px; left:0px; right:0px; bottom:0px; box-shadow: inset 0px 0px 29px 11px rgba(170,77,36,1); }

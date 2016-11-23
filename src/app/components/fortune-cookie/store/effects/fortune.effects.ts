@@ -17,12 +17,18 @@ export class FortuneEffects {
   @Effect() loadFortunes$ = this.update$
     .ofType(FortuneActions.LOAD_FORTUNES)
     .switchMap(() => this.fortuneService.getFortunes())
-    .map(fortunes => this.fortuneActions.loadFortunesSuccess(fortunes));
+    .map(this.fortuneActions.loadFortunesSuccess);
 
   @Effect() getFortune$ = this.update$
     .ofType(FortuneActions.GET_FORTUNE)
     .map<string>(action => action.payload)
     .switchMap((id) => this.fortuneService.getFortune(id))
-    .map(fortune => this.fortuneActions.getFortuneSuccess(fortune));
+    .map(this.fortuneActions.getFortuneSuccess);
+
+  @Effect() saveFortune$ = this.update$
+    .ofType(FortuneActions.SAVE_FORTUNE)
+    .map(action => action.payload)
+    .switchMap((fortune) => this.fortuneService.saveFortune(fortune))
+    .map(this.fortuneActions.saveFortuneSuccess)
 
 }

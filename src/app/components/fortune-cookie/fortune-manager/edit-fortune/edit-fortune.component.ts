@@ -1,18 +1,31 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'edit-fortune',
   template: `
-    {{ fortune.text }}
+    <p>{{ fortune.text }}</p>
+    <input [(ngModel)]="fortune.text" (keyup.enter)="save.emit(fortune)" />
+    <button (click)="save.emit(fortune)">Save</button>
   `,
   styles: [``]
 })
 export class EditFortuneComponent implements OnInit {
 
-  @Input() fortune;
+  _fortune
+  @Input() set fortune(value){
+    this._fortune = Object.assign({}, value);
+  }
+
+  get fortune(){
+    return this._fortune;
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  @Output() save = new EventEmitter()
+
 
 }

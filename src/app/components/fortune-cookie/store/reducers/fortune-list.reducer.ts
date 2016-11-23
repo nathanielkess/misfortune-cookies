@@ -15,9 +15,21 @@ export const fortuneListReducer = (state = initialState, action:Action ) => {
     case FortuneActions.LOAD_FORTUNES_SUCCESS: {
       return action.payload;
     }
+    case FortuneActions.SAVE_FORTUNE_SUCCESS: {
+      let index = state.reduce((output, curr) => { if (curr.id == action.payload.id ) { return output + 1 } }, 0);
+      if(index >= 0){
+        return [ 
+          ...state.slice(0, index),
+          action.payload,
+          ...state.slice(index + 1)
+        ]
+      }
+      return state;
+    }
     default:{
       return state;
     }
+
   }
 
 }

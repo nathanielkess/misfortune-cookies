@@ -20,10 +20,21 @@ export class FortuneService {
   getFortune(id):Observable<Fortune> {
     return this.http.get('/api/fortunes/' + id)
       .map(res => {
-        console.log(res);
         return res.json();
       });
   }
+
+  saveFortune(fortune) {
+    if(fortune.id === 0){
+      return this.http.post('/api/fortunes', fortune)
+        .map(res => res.json());
+    } else {
+      return this.http.put('/api/fortunes/' + fortune.id, fortune)
+        .map(res => res.json());
+    }
+  }
+
+  
 
   // private generateUUID(): string {
   //   return ('' + 1e7 + -1e3 + -4e3 + -8e3 + -1e11)

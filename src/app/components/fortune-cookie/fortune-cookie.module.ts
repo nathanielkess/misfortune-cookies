@@ -1,3 +1,4 @@
+import { DelayedClickDirective } from './cookie/delayed-click.directive';
 import { FortuneEffects } from './store/effects/fortune.effects';
 import { fortuneListReducer } from './store/reducers/fortune-list.reducer';
 import { allReducers } from './store/reducers/index';
@@ -18,7 +19,8 @@ import {EffectsModule} from '@ngrx/effects';
 @NgModule({
   declarations: [
     FortuneManagerComponent,
-    CookieComponent
+    CookieComponent,
+    DelayedClickDirective
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import {EffectsModule} from '@ngrx/effects';
   ],
   exports:[
     FortuneManagerComponent,
-    CookieComponent
+    CookieComponent,
   ]
   // bootstrap: [AppComponent]
 })
