@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookieComponent implements OnInit {
 
+  public revealFortune = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isReady(is:boolean){
+    //console.log('is it ready?:', is);
+  }
+
+  cookieClick(){
+    console.log('show fortune');
+    this.revealFortune = true;
   }
 
 }

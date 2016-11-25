@@ -1,9 +1,14 @@
 
-<section  class="fortuneCookie">
-  <div dalayedClick class="theCookie">
+<section class="fortuneCookie" [ngClass]="{'reveal': revealFortune}">
+  <div 
+    class="theCookie" 
+    dalayedClick 
+    (madeReady)="isReady($event)" 
+    (clicked)="cookieClick()"
+  >
     <img class="cookieImage" src="assets/FortuneCookie.png" alt="Fortune Cookie" />
   </div>
-  <div class="theFortune">
+  <div class="theFortune animated" [ngClass]="{'rubberBand': revealFortune}">
     Lorem ipsom dolor sot amet
   </div>
 </section>
