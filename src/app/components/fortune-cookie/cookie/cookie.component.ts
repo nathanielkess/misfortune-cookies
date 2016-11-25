@@ -19,8 +19,11 @@ export class CookieComponent implements OnInit {
   }
 
   cookieClick(){
-    console.log('show fortune');
     this.revealFortune = true;
+  }
+
+  startDelay(){
+    this.revealFortune = false;
   }
 
 }

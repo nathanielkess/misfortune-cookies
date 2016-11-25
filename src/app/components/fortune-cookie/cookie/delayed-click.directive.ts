@@ -10,6 +10,7 @@ export class DelayedClickDirective {
 
   @Output() madeReady = new EventEmitter();
   @Output() clicked = new EventEmitter();
+  @Output() startDelay = new EventEmitter();
 
   constructor(    
     private el: ElementRef, 
@@ -22,6 +23,7 @@ export class DelayedClickDirective {
   @HostListener('mouseenter') onMouseEnter() {
     this.isHover = true;
     this.warmUp();
+    this.startDelay.emit();
   }
   @HostListener('mouseleave') onMouseLeave() {
     this.isHover = false;
@@ -30,19 +32,13 @@ export class DelayedClickDirective {
   }
   @HostListener('click') onClick() {
     if(this.isClickable){
-      console.log('successful click - who FORTUNE!!!');
+      this.renderer.setElementClass(this.el.nativeElement.children[0], 'hot', false);
       this.clicked.emit();
     }
   }
 
 
-
-  
-
-
-
   private warmUp() {
-    console.log('warming up');
     this.renderer.setElementClass(this.el.nativeElement, 'warm', true);
     this.makeHot();
   }
@@ -51,7 +47,6 @@ export class DelayedClickDirective {
     
     window.setTimeout(() => {
       if(this.isHover){
-        console.log('its hot now!!');
         this.isClickable = true;  
         this.renderer.setElementClass(this.el.nativeElement.children[0], 'hot', true);
         this.madeReady.emit(true);
@@ -60,7 +55,6 @@ export class DelayedClickDirective {
   }
 
   private cancel(){
-    console.log('cancel');
     this.renderer.setElementClass(this.el.nativeElement, 'warm', false);
     this.renderer.setElementClass(this.el.nativeElement.children[0], 'hot', false);
     this.madeReady.emit(false);
