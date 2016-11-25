@@ -1,4 +1,16 @@
 
 .fortuneCookie { text-align:center; }
-  .theCookie { max-width:300px; background-color:#d25f2c; border-radius:150px; display:inline-block; }
   .theFortune { color: #ffffff; }
+  
+  
+.theCookie { max-width:300px; background-color:#d25f2c; border-radius:150px; display:inline-block; 
+
+  box-shadow: inset 0 0 0 0 #31302B;
+	-webkit-transition: all ease 1.5s;
+	-moz-transition: all ease 1.5s;
+	transition: all ease 1.5s;
+}
+  .theCookie:hover { box-shadow: inset 0 300px 0 0 #31302B; }
+
+
+.theFortune { padding:20px 20px; border-radius:4px; background-color:#ffffff; color:#168cb4; display:inline-block; box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.36); }  

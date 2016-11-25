@@ -137,7 +137,7 @@
   http://elrumordelaluz.github.io/csshake/
   Licensed under MIT
 \* * * * * * * * * * * * * * * * * * * * */
-.shake-hard {
+.hot {
   display: inline-block;
   transform-origin: center center; }
 
@@ -147,11 +147,11 @@
   animation-play-state: paused; }
 
 .shake-freeze:hover,
-.shake-trigger:hover .shake-freeze, .shake-hard:hover,
-.shake-trigger:hover .shake-hard {
+.shake-trigger:hover .shake-freeze, .hot:hover,
+.shake-trigger:hover .hot {
   animation-play-state: running; }
 
-@keyframes shake-hard {
+@keyframes hot {
   2% {
     transform: translate(3px, -1px) rotate(-0.5deg); }
   4% {
@@ -253,9 +253,9 @@
   0%, 100% {
     transform: translate(0, 0) rotate(0); } }
 
-.shake-hard:hover,
-.shake-trigger:hover .shake-hard, .shake-hard.shake-freeze, .shake-hard.shake-constant {
-  animation-name: shake-hard;
+.hot:hover,
+.shake-trigger:hover .hot, .hot.shake-freeze, .hot.shake-constant {
+  animation-name: hot;
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite; }
