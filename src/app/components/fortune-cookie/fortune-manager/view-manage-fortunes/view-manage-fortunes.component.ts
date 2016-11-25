@@ -35,5 +35,6 @@ export class ViewManageFortunesComponent implements OnInit {
       console.log(val)
     });
   }
+  
 
 }
