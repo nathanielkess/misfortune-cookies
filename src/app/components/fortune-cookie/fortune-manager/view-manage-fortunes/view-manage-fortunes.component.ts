@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'view-manage-fortunes',
   template: `
+    <edit-fortune></edit-fortune>
     <list-fortunes [fortunes]="fortunes | async"></list-fortunes>
 
   `,
@@ -21,10 +22,7 @@ export class ViewManageFortunesComponent implements OnInit {
   constructor(
     private store: Store<any>,
     private fortuneActions: FortuneActions,    
-  ) {
-
-
-   }
+  ) { }
 
   ngOnInit() {
     

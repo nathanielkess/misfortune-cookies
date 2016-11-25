@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'fortune-manager',
   template: `
-    <h2>Fortune Component</h2>
+
     <router-outlet></router-outlet>
   `,
   styles: [`

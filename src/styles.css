@@ -2,12 +2,14 @@
 
 /*Base
 *************************************/
-html { height:100%; }
+html { height:100%; background-color:#cfcfcf; }
 body { height:100%; font-family:Arial, Helvetica, sans-serif; }
 img { max-width:100%}
 
 /*Layout
 *************************************/
+
+
 
 /*Module
 *************************************/
@@ -15,3 +17,9 @@ img { max-width:100%}
 .fortuneCookie { width:350px; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
 
 .fortuneViewer { background-color:#d25f2c; position:fixed; top:0px; left:0px; right:0px; bottom:0px; box-shadow: inset 0px 0px 29px 11px rgba(170,77,36,1); }
+
+.listOfFortunes { list-style-type:none; padding:0px; margin:0px; text-align:center; }
+  .listOfFortunes li {  display:block; margin:30px 0px; }
+  .listOfFortunes li:first-child { transform: rotateZ(2deg)}
+  .listOfFortunes li:nth-child(even) { transform:rotateZ(-2deg) }
+  .listOfFortunes a { border-radius:2px; background-color:#ffffff; color:#168cb4; display:inline-block; box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.16); padding:15px 20px; display:inline-block; color:#168cb4; text-decoration:none; }

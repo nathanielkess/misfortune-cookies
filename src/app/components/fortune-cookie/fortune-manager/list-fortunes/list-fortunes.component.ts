@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'list-fortunes',
   template: `
   
-    <ul>
+    <ul class="listOfFortunes">
       <li *ngFor="let fortune of fortunes">
         <a [routerLink]="['/fortunes/details', fortune.id ]">{{ fortune.text }}</a>
       </li>
