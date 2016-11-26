@@ -53,6 +53,22 @@ export class FortuneActions{
     }
   }
 
+  static DELETE_FORTUNE = '[Fortune] Delete Fortune'
+  deleteFortune(fortune):Action {
+    return {
+      type: FortuneActions.DELETE_FORTUNE,
+      payload:fortune
+    }
+  }
+
+  static DELETE_FORTUNE_SUCCESS = '[Fortune] Delete Fortune success'
+  deleteFortuneSuccess(fortune):Action {
+    return {
+      type: FortuneActions.DELETE_FORTUNE_SUCCESS,
+      payload:fortune
+    }
+  }
+
 
 
 

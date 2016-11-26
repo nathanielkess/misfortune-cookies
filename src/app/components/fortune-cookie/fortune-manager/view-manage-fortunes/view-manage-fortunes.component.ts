@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'view-manage-fortunes',
   template: `
-    <edit-fortune></edit-fortune>
-    <list-fortunes [fortunes]="fortunes | async"></list-fortunes>
+    <edit-fortune (save)="addNew($event)"></edit-fortune>
+    <list-fortunes [fortunes]="fortunes | async" (delete)="deleteFortune($event)"></list-fortunes>
 
   `,
   styles: [``]
@@ -34,6 +34,17 @@ export class ViewManageFortunesComponent implements OnInit {
     this.fortunes.subscribe(val => {
       console.log(val)
     });
+
+  }
+
+  addNew(fortune){
+    console.log(fortune);
+    this.store.dispatch(this.fortuneActions.saveFortune(fortune));
+  }
+
+  deleteFortune(fortune){
+    console.log('delete fortune', fortune);
+    this.store.dispatch(this.fortuneActions.deleteFortune(fortune));
   }
   
 

@@ -20,14 +20,14 @@ import {EffectsModule} from '@ngrx/effects';
   declarations: [
     FortuneManagerComponent,
     CookieComponent,
-    DelayedClickDirective
+    DelayedClickDirective,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,
-    FortuneManagerModule,
+    FortuneManagerModule,    
     StoreModule.provideStore(allReducers),
     EffectsModule.run(FortuneEffects)
     //StoreModule.provideStore(fortunesReducer)

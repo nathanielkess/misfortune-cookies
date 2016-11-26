@@ -36,9 +36,7 @@ export class ViewFortuneDetailsComponent implements OnInit {
 
   save(fortune){
     console.log('saving: ', fortune);
-
     this.store.dispatch(this.fortuneActions.saveFortune(fortune));
-
   }
 
 

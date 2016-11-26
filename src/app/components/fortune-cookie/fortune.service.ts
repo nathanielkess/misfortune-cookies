@@ -34,6 +34,11 @@ export class FortuneService {
     }
   }
 
+  deleteFortune(fortune){
+    return this.http.delete('/api/fortunes/' + fortune.id)
+      .map(res => res.json());
+  }
+
   
 
   // private generateUUID(): string {

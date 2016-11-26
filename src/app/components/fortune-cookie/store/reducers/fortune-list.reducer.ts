@@ -26,10 +26,14 @@ export const fortuneListReducer = (state = initialState, action:Action ) => {
       }
       return state;
     }
+    case FortuneActions.DELETE_FORTUNE_SUCCESS: {
+      return state.filter(frtn => {
+        return frtn.id !== action.payload.id;
+      })
+    }
     default:{
       return state;
     }
-
   }
 
 }
