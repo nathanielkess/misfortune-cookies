@@ -1,4 +1,4 @@
-import { async } from '@angular/core/testing';
+
 import { Observable } from 'rxjs/Observable';
 import { FortuneActions } from './../../store/actions/fortuns.actions';
 import { AppState } from './../../store/reducers/index';
