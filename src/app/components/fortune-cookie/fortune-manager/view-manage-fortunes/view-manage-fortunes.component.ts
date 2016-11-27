@@ -11,7 +11,6 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <edit-fortune (save)="addNew($event)"></edit-fortune>
     <list-fortunes [fortunes]="fortunes | async" (delete)="deleteFortune($event)"></list-fortunes>
-
   `,
   styles: [``]
 })

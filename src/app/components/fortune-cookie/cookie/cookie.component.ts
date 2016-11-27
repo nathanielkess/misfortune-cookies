@@ -9,6 +9,7 @@ export class CookieComponent implements OnInit {
 
   public revealFortune = false;
   public randomFortune = "";
+  public isLocked = false;
   @Input() fortunesList;
 
   constructor() { }
@@ -23,7 +24,18 @@ export class CookieComponent implements OnInit {
   cookieClick(){
     this.revealFortune = true;
     console.log('randome item is', this.randomItem(this.fortunesList).text);
-    this.randomFortune = this.randomItem(this.fortunesList).text;
+
+    let r = this.randomItem(this.fortunesList);
+    this.randomFortune = r.text;
+    this.fortunesList = this.fortunesList.filter(fortune => fortune.id !== r.id);
+    this.isLocked = true;
+
+  }
+
+  close(){
+    console.log('closing');
+    this.isLocked = false;
+    this.revealFortune = false;
   }
 
   startDelay(){

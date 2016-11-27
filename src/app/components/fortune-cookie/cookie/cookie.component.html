@@ -6,11 +6,13 @@
     (madeReady)="isReady($event)" 
     (clicked)="cookieClick()"
     (startDelay)="startDelay()"
+    [locked]="isLocked"
   >
     <img class="cookieImage" src="assets/FortuneCookie.png" alt="Fortune Cookie" />
   </div>
   <div class="theFortune animated" [ngClass]="{'rubberBand': revealFortune}">
     {{ randomFortune }}
+    <button (click)="close()" class="button close">Close</button>
   </div>
 </section>
 

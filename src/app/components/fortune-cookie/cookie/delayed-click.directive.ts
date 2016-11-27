@@ -11,6 +11,7 @@ export class DelayedClickDirective {
   @Output() madeReady = new EventEmitter();
   @Output() clicked = new EventEmitter();
   @Output() startDelay = new EventEmitter();
+  @Input() locked = false;
 
   constructor(    
     private el: ElementRef, 
@@ -21,9 +22,11 @@ export class DelayedClickDirective {
 
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.isHover = true;
-    this.warmUp();
-    this.startDelay.emit();
+    if(!this.locked) {
+      this.isHover = true;
+      this.warmUp();
+      this.startDelay.emit();
+    }
   }
   @HostListener('mouseleave') onMouseLeave() {
     this.isHover = false;
