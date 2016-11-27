@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CookieComponent implements OnInit {
 
   public revealFortune = false;
-  public randomFortune = "";
+  public randomFortune = "&nbsp;";
   public isLocked = false;
   public isEnd = false;
   @Input() fortunesList;

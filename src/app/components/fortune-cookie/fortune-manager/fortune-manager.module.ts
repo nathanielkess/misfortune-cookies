@@ -9,6 +9,7 @@ import { EditFortuneComponent } from './edit-fortune/edit-fortune.component';
 import { ListFortunesComponent } from './list-fortunes/list-fortunes.component';
 import { ViewFortuneDetailsComponent } from './view-fortune-details/view-fortune-details.component';
 import { ViewManageFortunesComponent } from './view-manage-fortunes/view-manage-fortunes.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { ViewManageFortunesComponent } from './view-manage-fortunes/view-manage-
     ListFortunesComponent,
     ViewFortuneDetailsComponent,
     ViewManageFortunesComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

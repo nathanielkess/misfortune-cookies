@@ -4,9 +4,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'edit-fortune',
   template: `
-    <p>{{ fortune?.text }}</p>
-    <input [(ngModel)]="fortune.text" (keyup.enter)="save.emit(fortune)" />
-    <button (click)="save.emit(fortune)">Save</button>
+    <div class="fortuneEditor">
+      <p class="text">{{ fortune?.text }}</p>
+      <div class="field">
+        <input [(ngModel)]="fortune.text" placeholder="Enter a fortune here" (keyup.enter)="save.emit(fortune)" />
+        <button class="save" (click)="save.emit(fortune)">Save</button>
+      </div>      
+    </div>
   `,
   styles: [``]
 })

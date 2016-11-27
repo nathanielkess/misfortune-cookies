@@ -9,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'view-manage-fortunes',
   template: `
-    <edit-fortune (save)="addNew($event)"></edit-fortune>
-    <list-fortunes [fortunes]="fortunes | async" (delete)="deleteFortune($event)"></list-fortunes>
+    <app-nav></app-nav>
+    <div class="fortunes">
+      <edit-fortune (save)="addNew($event)"></edit-fortune>
+      <list-fortunes [fortunes]="fortunes | async" (delete)="deleteFortune($event)"></list-fortunes>
+    </div>
   `,
   styles: [``]
 })

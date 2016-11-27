@@ -9,7 +9,12 @@ import {Subscription} from 'rxjs/Subscription';
 @Component({
   selector: 'view-fortune-details',
   template: `
-    <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>
+    <app-nav></app-nav>
+    <section class="fortuneDetails">
+      <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>
+      
+      <a class="button link" [routerLink]="['/fortunes']" routerLinkActive="active">Back to Fortunes</a>
+    </section>
   `,
   styles: [``]
 })
