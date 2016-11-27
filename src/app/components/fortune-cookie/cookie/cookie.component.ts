@@ -10,6 +10,7 @@ export class CookieComponent implements OnInit {
   public revealFortune = false;
   public randomFortune = "";
   public isLocked = false;
+  public isEnd = false;
   @Input() fortunesList;
 
   constructor() { }
@@ -22,20 +23,35 @@ export class CookieComponent implements OnInit {
   }
 
   cookieClick(){
-    this.revealFortune = true;
-    console.log('randome item is', this.randomItem(this.fortunesList).text);
+    this.setRandomFortune();
+  }
 
+
+  setRandomFortune(){
+    this.revealFortune = true;
     let r = this.randomItem(this.fortunesList);
     this.randomFortune = r.text;
     this.fortunesList = this.fortunesList.filter(fortune => fortune.id !== r.id);
     this.isLocked = true;
-
   }
 
   close(){
-    console.log('closing');
-    this.isLocked = false;
+    console.log('Remaining:', this.fortunesList.length);
+
     this.revealFortune = false;
+
+    if(this.fortunesList.length > 0) {
+      this.isLocked = false;
+    }else{
+      //end state
+      this.isEnd = true;
+      this.isLocked = true;
+    }
+
+  }
+
+  setEndState(){
+
   }
 
   startDelay(){
