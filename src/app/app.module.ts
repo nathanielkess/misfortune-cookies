@@ -1,5 +1,6 @@
 import { AppRoutingModule } from './app-routing.module';
 import { FortuneCookieModule } from './components/fortune-cookie/fortune-cookie.module';
+import { FortuneService } from './components/fortune-cookie/fortune.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,7 @@ import { MyfortuneViewComponent } from './components/myfortune-view/myfortune-vi
     FortuneCookieModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [ FortuneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -32,7 +32,7 @@ export class ViewManageFortunesComponent implements OnInit {
     this.fortunes = this.store.select('fortunes');
 
     this.fortunes.subscribe(val => {
-      console.log(val)
+      console.log(val);
     });
 
   }

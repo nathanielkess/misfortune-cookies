@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { FortuneService } from './../fortune-cookie/fortune.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyfortuneViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fortuneService:FortuneService) { }
 
+  fortunes: Observable<any>;
+  
   ngOnInit() {
+
+    this.fortunes = this.fortuneService.getFortunes();
+
+    console.log(this.fortunes);
+    
+    // this.fortunes.subscribe(val => {
+    //   console.log(val);
+    // })
   }
+
+
 
 }
