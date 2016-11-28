@@ -5,7 +5,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'edit-fortune',
   template: `
     <div class="fortuneEditor">
-      <p class="text">{{ fortune?.text }}</p>
       <div class="field">
         <input [(ngModel)]="fortune.text" placeholder="Enter a fortune here" (keyup.enter)="saveInput(fortune)" />
         <button class="save" (click)="saveInput(fortune)">Save</button>

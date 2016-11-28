@@ -29,9 +29,10 @@ img { max-width:100%}
   .fortuneEditor .save { position:absolute; right:-8px; top:-8px; }
   .fortuneEditor .text { color:#ffffff; font-weight:700;}
 
-.fortuneDetails { text-align:center;}
-  .fortuneDetails .fortuneEditor { margin-top:160px;}
-  .fortuneDetails .link { margin-top:70px;}  
+.fortuneDetails { text-align:center;margin-top:160px;}
+  .fortuneDetails .link { margin-top:70px;} 
+  .fortuneDetails .fortuneText { color:#ffffff; font-weight:700;} 
+  .fortuneDetails input { min-width:320px;}
 
 .listOfFortunes { list-style-type:none; padding:0px; margin:0px; text-align:center; }
   .listOfFortunes li {  display:block; margin:30px 0px; transition: transform .05s linear; }

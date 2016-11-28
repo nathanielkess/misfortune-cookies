@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs/Subscription';
   template: `
     <app-nav></app-nav>
     <section class="fortuneDetails">
-      <p>text here: {{ fortuneText }}</p>
+      <p class="fortuneText">{{ fortuneText }}</p>
       <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>      
       <a class="button link" [routerLink]="['/fortunes']" routerLinkActive="active">Back to Fortunes</a>
     </section>
