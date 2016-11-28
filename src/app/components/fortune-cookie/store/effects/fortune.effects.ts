@@ -31,10 +31,16 @@ export class FortuneEffects {
     .switchMap((fortune) => this.fortuneService.saveFortune(fortune))
     .map(this.fortuneActions.saveFortuneSuccess);
 
-  @Effect() deleteFortne = this.update$
+  @Effect() addFortune$ = this.update$
+    .ofType(FortuneActions.ADD_FORTUNE)
+    .map(action => action.payload)
+    .switchMap((fortune) => this.fortuneService.saveFortune(fortune))
+    .map(this.fortuneActions.addFortuneSuccess);
+
+  @Effect() deleteFortune$ = this.update$
     .ofType(FortuneActions.DELETE_FORTUNE)
     .map(action => action.payload)
-    .switchMap((fortune) => this.fortuneService.deleteFortune(fortune))
-    .map(this.fortuneActions.deleteFortuneSuccess);  
+    .switchMap(fortune => this.fortuneService.deleteFortune(fortune))
+    .map(fortune => this.fortuneActions.deleteFortuneSuccess(fortune));  
 
 }

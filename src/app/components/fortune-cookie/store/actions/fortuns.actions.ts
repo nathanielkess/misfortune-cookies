@@ -45,6 +45,22 @@ export class FortuneActions{
     }
   }
 
+  static ADD_FORTUNE = '[Fortune] Add Fortune';
+  addFortune(fortune):Action {
+    return {
+      type: FortuneActions.ADD_FORTUNE,
+      payload:fortune
+    }
+  }
+
+  static ADD_FORTUNE_SUCCESS = '[Fortune] Add Fortune Success';
+  addFortuneSuccess(fortune):Action {
+    return {
+      type: FortuneActions.ADD_FORTUNE_SUCCESS,
+      payload:fortune
+    }
+  }
+
   static SAVE_FORTUNE_SUCCESS = '[Fortune] Save Fortune Success';
   saveFortuneSuccess(fortune) {
     return {

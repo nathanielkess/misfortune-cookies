@@ -22,7 +22,7 @@ export class FortuneService {
       .map(res => {
         return res.json();
       });
-  }
+  } 
 
   saveFortune(fortune) {
     if(fortune.id === 0){
@@ -36,7 +36,7 @@ export class FortuneService {
 
   deleteFortune(fortune){
     return this.http.delete('/api/fortunes/' + fortune.id)
-      .map(res => res.json());
+      .map(res => fortune);
   }
 
   

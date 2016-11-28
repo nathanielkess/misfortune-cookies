@@ -27,20 +27,16 @@ export class ViewManageFortunesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
-    
     this.store.dispatch(this.fortuneActions.loadFortunes());
-    
     this.fortunes = this.store.select('fortunes');
-
-
-
   }
 
   addNew(fortune){
     console.log(fortune);
-    this.store.dispatch(this.fortuneActions.saveFortune(fortune));
+    //this.store.dispatch(this.fortuneActions.saveFortune(fortune));
+    this.store.dispatch(this.fortuneActions.addFortune(fortune));
   }
+
 
   deleteFortune(fortune){
     console.log('delete fortune', fortune);
