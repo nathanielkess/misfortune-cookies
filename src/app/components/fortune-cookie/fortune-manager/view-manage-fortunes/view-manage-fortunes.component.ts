@@ -32,14 +32,12 @@ export class ViewManageFortunesComponent implements OnInit {
   }
 
   addNew(fortune){
-    console.log(fortune);
     //this.store.dispatch(this.fortuneActions.saveFortune(fortune));
     this.store.dispatch(this.fortuneActions.addFortune(fortune));
   }
 
 
   deleteFortune(fortune){
-    console.log('delete fortune', fortune);
     this.store.dispatch(this.fortuneActions.deleteFortune(fortune));
   }
   

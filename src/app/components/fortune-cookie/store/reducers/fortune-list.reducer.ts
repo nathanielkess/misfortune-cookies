@@ -16,14 +16,7 @@ export const fortuneListReducer = (state = initialState, action:Action ) => {
       return action.payload;
     }
     case FortuneActions.SAVE_FORTUNE_SUCCESS: {
-      
-      let index = state.reduce((output, curr) => { 
-        if (curr.id == action.payload.id ) { 
-          return output + 1 
-        } 
-      }, 0);
-
-      console.log('save fortune success reducer');
+      let index = state.reduce((output, curr) => { if (curr.id == action.payload.id ) { return output + 1 }}, 0);
       if(index >= 0){
         return [ 
           ...state.slice(0, index),
@@ -34,18 +27,12 @@ export const fortuneListReducer = (state = initialState, action:Action ) => {
       return state;
     }
     case FortuneActions.ADD_FORTUNE_SUCCESS: {
-      console.log('add reducer');
       return [ ...state, action.payload]
     }
     case FortuneActions.DELETE_FORTUNE_SUCCESS: {
-
-      console.log('test');
-      
-      let newstate =  state.filter(frtn => {
+      return state.filter(frtn => {
         return frtn.id !== action.payload.id;
       });
-      return newstate;
-
     }
     default:{
       return state;

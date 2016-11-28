@@ -11,8 +11,8 @@ import {Subscription} from 'rxjs/Subscription';
   template: `
     <app-nav></app-nav>
     <section class="fortuneDetails">
-      <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>
-      
+      <p>text here: {{ fortuneText }}</p>
+      <edit-fortune [fortune]="fortune | async" (save)="save($event)"></edit-fortune>      
       <a class="button link" [routerLink]="['/fortunes']" routerLinkActive="active">Back to Fortunes</a>
     </section>
   `,
@@ -22,6 +22,7 @@ export class ViewFortuneDetailsComponent implements OnInit {
 
   idSub: Subscription;
   fortune: Observable<any>;
+  fortuneText = "empty";
 
 
   constructor(
@@ -31,11 +32,14 @@ export class ViewFortuneDetailsComponent implements OnInit {
   ) { 
     this.fortune = this.store.select('fortune');
   }
-
   ngOnInit() {
     this.idSub = this.route.params.select<string>('id')
       .subscribe(id => {
           this.store.dispatch(this.fortuneActions.getFortune(id))
+    });
+
+    this.fortune.subscribe(val => {
+      this.fortuneText = val.text;
     });
   }
 

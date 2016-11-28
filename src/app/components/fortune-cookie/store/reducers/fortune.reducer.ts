@@ -12,9 +12,11 @@ const initialState: FortuneState = {
 }
 
 export const fortuneReducer = (state = initialState, action:Action) => {
-  
   switch(action.type){
     case FortuneActions.GET_FORTUNE_SUCCESS: {
+      return action.payload;
+    }
+    case FortuneActions.SAVE_FORTUNE_SUCCESS: {
       return action.payload;
     }
     default: {

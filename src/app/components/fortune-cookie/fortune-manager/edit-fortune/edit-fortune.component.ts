@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     <div class="fortuneEditor">
       <p class="text">{{ fortune?.text }}</p>
       <div class="field">
-        <input [(ngModel)]="fortune.text" placeholder="Enter a fortune here" (keyup.enter)="save.emit(fortune)" />
-        <button class="save" (click)="save.emit(fortune)">Save</button>
+        <input [(ngModel)]="fortune.text" placeholder="Enter a fortune here" (keyup.enter)="saveInput(fortune)" />
+        <button class="save" (click)="saveInput(fortune)">Save</button>
       </div>      
     </div>
   `,
@@ -22,8 +22,6 @@ export class EditFortuneComponent implements OnInit {
     this._fortune = Object.assign({}, value);
   }
 
-  @Input() hideDetails: boolean = false;
-
   get fortune(){
     return this._fortune;
   }
@@ -34,6 +32,11 @@ export class EditFortuneComponent implements OnInit {
   }
 
   @Output() save = new EventEmitter()
+
+  saveInput(fortune){
+    this.save.emit(fortune);
+    this.fortune = { id: 0, text: "" }
+  }
 
 
 }

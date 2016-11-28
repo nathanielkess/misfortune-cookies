@@ -47,7 +47,7 @@ img { max-width:100%}
   .close:hover { cursor: pointer; transform:scale(1.5, 1.5); }
 
 .save { overflow:hidden; font-size:18px; padding:0px; margin:0px; border:none; background-color:#46b058; position:relative; text-indent: -900px; width:20px; height:20px; border-radius:15px; transition: transform .05s linear;  }
-  .save:after { text-indent: 0px; content:'+'; font-weight:700; display:block; position:absolute; color:#ffffff; left:4px; top:0px; }
+  .save:after { text-indent: 0px; content:'+'; font-weight:700; display:block; position:absolute; color:#ffffff; left:5px; top:-1px; }
   .save:hover { cursor: pointer; transform:scale(1.5, 1.5); }  
 
 .iconLink { display:block; width:30px; height:30px; text-indent:-900px; position:relative; overflow:hidden; }

@@ -5,7 +5,7 @@
       "text": "You will encounter a spider soon."
     },
     {
-      "id": 2,
+      "id": "2",
       "text": "Don't go outside today."
     },
     {
@@ -30,7 +30,11 @@
     },
     {
       "id": "Bk8uWDDfx",
-      "text": "You will misuse the apostrophe in \"you're\" on the next email you send.  "
+      "text": "You will misuse the apostrophe on \"you're\" on the next email you send.  "
+    },
+    {
+      "id": "H1c3oxcfg",
+      "text": "Add a new fortune change"
     }
   ]
 }
